@@ -28,7 +28,7 @@ public enum Resources {
         return unit;
     }
 
-    public void setValue(int value) {
+    void setValue(int value) {
         this.value = value;
     }
     
