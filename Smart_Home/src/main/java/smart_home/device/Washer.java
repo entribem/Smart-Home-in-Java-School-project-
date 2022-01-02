@@ -9,9 +9,14 @@ public class Washer extends Device {
 
     @Override
     public void use() {
-        if (this.state == State.OFF) {
-            this.turnOn();
+        if (this.currentState == State.IDLE) {
+            if (hasContent) {
+                this.setState(new ActiveState());
+                this.currentState = State.ACTIVE;
+            }
+            else {
+                System.out.println("washing machine does not have clothes in it\n");
+            }
         }
-        this.state = State.ACTIVE;
     }
 }

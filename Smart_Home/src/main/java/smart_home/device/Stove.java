@@ -9,9 +9,9 @@ public class Stove extends Device {
 
     @Override
     public void use() {
-        if (this.state == State.OFF) {
-            this.turnOn();
+        if (this.currentState == State.IDLE) {
+            this.setState(new ActiveState());
+            this.currentState = State.ACTIVE;
         }
-        this.state = State.ACTIVE;
     }
 }
