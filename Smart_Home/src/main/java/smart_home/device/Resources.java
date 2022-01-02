@@ -1,5 +1,8 @@
 package smart_home.device;
 
+/**
+ * Enum Resources standardize consumption resources.
+ */
 public enum Resources {
     Electricity("electricity", 0, "kWh"),
     Gas("gas", 0, "kWh"),
@@ -16,14 +19,26 @@ public enum Resources {
         this.unit = unit;
     }
 
+    /**
+     * Method getName retrieves name of a resource.
+     * @return String 
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Method getValue retrieves value of current consumption.
+     * @return int
+     */
     public int getValue() {
         return value;
     }
 
+    /**
+     * Method getUnit retrieves unit of the resource.
+     * @return String
+     */
     public String getUnit() {
         return unit;
     }
