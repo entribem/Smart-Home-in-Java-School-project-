@@ -1,12 +1,12 @@
 package smart_home.device;
 
 public abstract class Device {
-    DeviceState state = new OffState();
-    State currentState = State.OFF;
-    int consumption;
-    int electricalConsumption;
-    int gasConsumption;
-    int waterConsumption;
+    DeviceState state;
+    State currentState;
+    Resources electricityConsumption = Resources.Electricity;
+    Resources gasConsumption = Resources.Gas;
+    Resources waterConsumption = Resources.Water;
+    Resources durability = Resources.Durability;
     String documentation;
     boolean hasContent;
 
@@ -16,6 +16,15 @@ public abstract class Device {
         if (currentState == State.OFF) {
             state.turnOn(this);
             currentState = State.IDLE;
+            if (electricityConsumption.getValue() != -1) {
+                electricityConsumption.setValue(5);
+            }
+            if (gasConsumption.getValue() != -1) {
+                gasConsumption.setValue(5);
+            }
+            if (waterConsumption.getValue() != -1) {
+                waterConsumption.setValue(5);
+            }
         }
     }
 
@@ -23,6 +32,15 @@ public abstract class Device {
         if (currentState == State.IDLE) {
             state.turnOff(this);
             currentState = State.OFF;
+            if (electricityConsumption.getValue() != -1) {
+                electricityConsumption.setValue(0);
+            }
+            if (gasConsumption.getValue() != -1) {
+                gasConsumption.setValue(0);
+            }
+            if (waterConsumption.getValue() != -1) {
+                waterConsumption.setValue(0);
+            }
         }
     }
 
@@ -34,15 +52,15 @@ public abstract class Device {
         return currentState;
     }
 
-    public int getElectricalConsumption() {
-        return electricalConsumption;
+    public Resources getElectricityConsumption() {
+        return electricityConsumption;
     }
 
-    public int getGasConsumption() {
+    public Resources getGasConsumption() {
         return gasConsumption;
     }
 
-    public int getWaterConsumption() {
+    public Resources getWaterConsumption() {
         return waterConsumption;
     }
 

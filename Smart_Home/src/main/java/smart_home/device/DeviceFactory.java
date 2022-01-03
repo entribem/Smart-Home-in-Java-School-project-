@@ -1,24 +1,24 @@
 package smart_home.device;
 
 public class DeviceFactory {
-    public static Device getDevice(String type, int consumption, String documentation) {
+    public static Device getDevice(String type, String documentation) {
         if ("TV".equalsIgnoreCase(type)) {
-            return new TV(consumption, documentation);
+            return new TV(documentation);
         }
         else if ("Fridge".equalsIgnoreCase(type)) {
-            return new Fridge(consumption, documentation);
+            return new Fridge(documentation);
         }
         else if ("Washer".equalsIgnoreCase(type)) {
-            return new Washer(consumption, documentation);
+            return new Washer(documentation);
         }
         else if ("Oven".equalsIgnoreCase(type)) {
-            return new Oven(consumption, documentation);
+            return new Oven(documentation);
         }
         else if ("Microwave".equalsIgnoreCase(type)) {
-            return new Microwave(consumption, documentation);
+            return new Microwave(documentation);
         }
         else if ("Stove".equalsIgnoreCase(type)) {
-            return new Stove(consumption, documentation);
+            return new Stove(documentation);
         }
         return null;
     }
