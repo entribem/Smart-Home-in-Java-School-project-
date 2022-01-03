@@ -1,15 +1,15 @@
 package smart_home.house;
 
+import java.util.ArrayList;
+
 public class House {
     private int floorCount;
-    private int roomCount;
-    private int peopleCount;
-    private int animalCount;
-    private int deviceCount;
-    private int deviceTypeCount;
     private int skiCount;
     private int bikeCount;
+    private int carCount;
     private static House INSTANCE;
+    
+    private RoomIterator rooms = new RoomIterator();
 
     private House() {
 
@@ -22,55 +22,22 @@ public class House {
         return INSTANCE;
     }
 
-    public void setRoomCount(int roomCount) {
-        this.roomCount = roomCount;
-    }
-
     public void setSkiCount(int skiCount) {
         this.skiCount = skiCount;
     }
-
-    public void setDeviceTypeCount(int deviceTypeCount) {
-        this.deviceTypeCount = deviceTypeCount;
-    }
-
-    public void setDeviceCount(int deviceCount) {
-        this.deviceCount = deviceCount;
-    }
-
-    public void setPeopleCount(int peopleCount) {
-        this.peopleCount = peopleCount;
-    }
-
 
     public void setBikeCount(int bikeCount) {
         this.bikeCount = bikeCount;
     }
 
-    public void setAnimalCount(int animalCount) {
-        this.animalCount = animalCount;
+    public void setCarCount(int carCount) {
+        this.carCount = carCount;
     }
 
     public void setFloorCount(int floorCount) {
         this.floorCount = floorCount;
     }
-
-    public int getRoomCount() {
-        return roomCount;
-    }
-
-    public int getPeopleCount() {
-        return peopleCount;
-    }
-
-    public int getDeviceCount() {
-        return deviceCount;
-    }
-
-    public int getDeviceTypeCount() {
-        return deviceTypeCount;
-    }
-
+    
     public int getSkiCount() {
         return skiCount;
     }
@@ -79,11 +46,16 @@ public class House {
         return floorCount;
     }
 
+    public int getCarCount() {
+        return carCount;
+    }
+    
     public int getBikeCount() {
         return bikeCount;
     }
-
-    public int getAnimalCount() {
-        return animalCount;
+    
+    void addRoom(Room room) {
+        rooms.add(room);
     }
+
 }
