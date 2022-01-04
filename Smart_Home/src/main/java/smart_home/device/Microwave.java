@@ -9,6 +9,7 @@ public class Microwave extends Device {
         this.room = room;
         this.gasConsumption.setValue(-1);
         this.waterConsumption.setValue(-1);
+        this.durability.setValue(50);
         this.documentation = documentation;
         this.turnOff();
     }

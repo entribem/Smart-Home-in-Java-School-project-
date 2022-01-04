@@ -34,12 +34,12 @@ public class SmartHome {
         House house = new HouseBuilder(2).setSkiCount(1).setBikeCount(2).setCarCount(1).build();
 
         //Initialize Rooms
-        Room kitchen = new Room(RoomType.Kitchen, house, 4);
-        Room bedroom1 = new Room(RoomType.Bedroom, house, 2);
-        Room bedroom2 = new Room(RoomType.Bedroom, house, 1);
-        Room bathroom = new Room(RoomType.Bathroom, house, 0);
-        Room wc = new Room(RoomType.Toilet, house, 0);
-        Room gamingLounge = new Room(RoomType.Playroom, house, 0);
+        Room kitchen = new Room(RoomType.KITCHEN, house, 4);
+        Room bedroom1 = new Room(RoomType.BEDROOM, house, 2);
+        Room bedroom2 = new Room(RoomType.BEDROOM, house, 1);
+        Room bathroom = new Room(RoomType.BATHROOM, house, 0);
+        Room wc = new Room(RoomType.TOILET, house, 0);
+        Room gamingLounge = new Room(RoomType.PLAYROOM, house, 0);
        
         //Initialize People
         EnumSet<Activities> active = new RegularEnumSet<>();//????????????????????
@@ -48,9 +48,9 @@ public class SmartHome {
         Person dad = PeopleFactory.insertPerson(PeopleType.FATHER, bedroom1, active);
         Person mom = PeopleFactory.insertPerson(PeopleType.MOTHER, bedroom1, active);
         Person casualSon = PeopleFactory.insertPerson(PeopleType.SON, gamingLounge, active);
-        Person wierdSon = PeopleFactory.insertPerson(PeopleType.SON, wc, active);
+        Person weirdSon = PeopleFactory.insertPerson(PeopleType.SON, wc, active);
         Person casualDaughter = PeopleFactory.insertPerson(PeopleType.DAUGHTER, kitchen, active);
-        Person wierdDaughter = PeopleFactory.insertPerson(PeopleType.DAUGHTER, bedroom2, active);
+        Person weirdDaughter = PeopleFactory.insertPerson(PeopleType.DAUGHTER, bedroom2, active);
         //Initialize Animals
         Animal cuteCat = AnimalFactory.insertAnimal(AnimalType.CAT, bedroom1, active);
         Animal cuterCat = AnimalFactory.insertAnimal(AnimalType.CAT, gamingLounge, active);
@@ -61,7 +61,7 @@ public class SmartHome {
         Device smallTv = DeviceFactory.insertDevice(DeviceType.TV, 1, wc);
         Device bigTv = DeviceFactory.insertDevice(DeviceType.TV, 4, kitchen);
         Device gamingTv = DeviceFactory.insertDevice(DeviceType.TV, 3, bedroom2);
-        Device wierdTv = DeviceFactory.insertDevice(DeviceType.TV, 2, bedroom2);
+        Device weirdTv = DeviceFactory.insertDevice(DeviceType.TV, 2, bedroom2);
         Device susTv = DeviceFactory.insertDevice(DeviceType.TV, 2, bedroom2);
         Device kawaiiTv = DeviceFactory.insertDevice(DeviceType.TV, 3, bedroom1);
         Device hdrTv = DeviceFactory.insertDevice(DeviceType.TV, 5, bedroom2);

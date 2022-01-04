@@ -4,11 +4,11 @@ package smart_home.house;
  *
  */
 public enum RoomType {
-    Kitchen,
-    Livingroom,
-    Bedroom,
-    Toilet,
-    Bathroom,
-    UtilityRoom,
-    Playroom;
+    KITCHEN,
+    LIVINGROOM,
+    BEDROOM,
+    TOILET,
+    BATHROOM,
+    UTILITYROOM,
+    PLAYROOM
 }

@@ -9,6 +9,7 @@ public class Washer extends Device {
     public Washer(String documentation, Room room) {
         this.room = room;
         this.gasConsumption.setValue(-1);
+        this.durability.setValue(50);
         this.documentation = documentation;
         this.turnOff();
     }
