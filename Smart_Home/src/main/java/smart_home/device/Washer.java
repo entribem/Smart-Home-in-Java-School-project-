@@ -1,10 +1,13 @@
 package smart_home.device;
 
+import smart_home.house.Room;
+
 public class Washer extends Device {
     private static final int STANDARD_FRIDGE_ELECTRICITY_CONSUMPTION = 20;
     private static final int STANDARD_FRIDGE_WATER_CONSUMPTION = 20;
 
-    public Washer(String documentation) {
+    public Washer(String documentation, Room room) {
+        this.room = room;
         this.gasConsumption.setValue(-1);
         this.documentation = documentation;
         this.turnOff();

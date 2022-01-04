@@ -1,9 +1,12 @@
 package smart_home.device;
 
+import smart_home.house.Room;
+
 public class Fridge extends Device {
     private static final int STANDARD_FRIDGE_ELECTRICITY_CONSUMPTION = 20;
 
-    public Fridge(String documentation) {
+    public Fridge(String documentation, Room room) {
+        this.room = room;
         this.gasConsumption.setValue(-1);
         this.waterConsumption.setValue(-1);
         this.documentation = documentation;

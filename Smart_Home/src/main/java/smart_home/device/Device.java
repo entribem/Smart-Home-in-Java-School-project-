@@ -1,18 +1,21 @@
 package smart_home.device;
 
+import smart_home.house.Room;
+
 public abstract class Device {
-    DeviceState state;
-    State currentState;
-    Resources electricityConsumption = Resources.Electricity;
-    Resources gasConsumption = Resources.Gas;
-    Resources waterConsumption = Resources.Water;
-    Resources durability = Resources.Durability;
-    String documentation;
-    boolean hasContent;
+    protected DeviceState state;
+    protected State currentState;
+    protected Resources electricityConsumption = Resources.Electricity;
+    protected Resources gasConsumption = Resources.Gas;
+    protected Resources waterConsumption = Resources.Water;
+    protected Resources durability = Resources.Durability;
+    protected String documentation;
+    protected boolean hasContent;
+    protected Room room;
 
     public abstract void use();
 
-    void turnOn() {
+    public void turnOn() {
         if (currentState == State.OFF) {
             state.turnOn(this);
             currentState = State.IDLE;
@@ -28,7 +31,7 @@ public abstract class Device {
         }
     }
 
-    void turnOff() {
+    public void turnOff() {
         if (currentState == State.IDLE) {
             state.turnOff(this);
             currentState = State.OFF;
@@ -70,5 +73,9 @@ public abstract class Device {
 
     public boolean isHasContent() {
         return hasContent;
+    }
+
+    public Resources getDurability() {
+        return durability;
     }
 }
